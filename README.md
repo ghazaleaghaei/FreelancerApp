@@ -10,3 +10,4 @@ Currently, two official plugins are available:
 
 # useful react codes
 - OTP
+- React Query
