@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { checkOtp } from "../../Services.jsx/AuthService"
 import { useNavigate } from "react-router-dom"
 
-function CheckOTPForm({ phoneNumber, onBack, onResendOtp }) {
+function CheckOTPForm({ phoneNumber, onBack, onResendOtp, otpResponse }) {
     const [time, setTime] = useState(10)
 
     const navigate = useNavigate()
@@ -52,6 +52,14 @@ function CheckOTPForm({ phoneNumber, onBack, onResendOtp }) {
                     : <button onClick={onResendOtp}>resend code</button>
             }
         </div>
+        {
+            otpResponse && <p>
+                {otpResponse?.message}
+                <button onClick={onBack}>
+                    edit phone Number
+                </button>
+            </p>
+        }
         <div class="bg-gradient-to-t from-color2/50 to-color1/50 w-full max-w-lg h-96 p-4 rounded-2xl shadow-lg shadow-color3">
             <form
                 class="flex flex-col gap-6 items-center justify-center h-full text-lg font-semibold text-white"
@@ -66,8 +74,9 @@ function CheckOTPForm({ phoneNumber, onBack, onResendOtp }) {
                     onChange={(e) => setCode(e.target.value)}
                 />
                 <button
-                    class="bg-color1/10 w-1/3 mx-auto p-1 rounded-xl border border-white hover:scale-105 duration-300 hover:shadow-lg"
+                    class="bg-color1/10 w-1/3 mx-auto p-1 rounded-xl border border-white hover:scale-105 duration-300 hover:shadow-lg disabled:opacity-50"
                     type="submit"
+                    disabled={isPending}
                 >
                     submit
                 </button>

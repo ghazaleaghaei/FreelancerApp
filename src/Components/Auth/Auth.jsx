@@ -7,7 +7,7 @@ import { getOtp } from "../../Services.jsx/AuthService"
 function Auth() {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [step, setStep] = useState(1)
-    const { isPending: isSendingOtp, error, data, mutateAsync } = useMutation({
+    const { isPending: isSendingOtp, error, data: otpResponse, mutateAsync } = useMutation({
         mutationFn: getOtp,
     })
 
@@ -37,6 +37,7 @@ function Auth() {
                     phoneNumber={phoneNumber}
                     onBack={() => setStep((s) => s - 1)}
                     onResendOtp={sendOtpHandler}
+                    otpResponse={otpResponse}
                 />
             default:
                 return null;
