@@ -65,8 +65,8 @@ function CheckOTPForm({ phoneNumber, onBack, onResendOtp, otpResponse }) {
                 class="flex flex-col gap-6 items-center justify-center h-full text-lg font-semibold text-white"
                 onSubmit={checkOtpHandler}
             >
-                <label class="shadow-xl p-1"
-                >Enter OTP code
+                <label class="shadow-xl p-1">
+                    Enter OTP code
                 </label>
                 <input
                     class="outline-none rounded-xl p-2 text-color3 focus:outline focus:outline-color2 outline-offset-0 focus:shadow-xl"

@@ -1,5 +1,6 @@
 
 function SendOTPForm({ onSubmit, isSendingOtp, phoneNumber, onChange }) {
+
     return <div class="bg-gradient-to-b from-color2/50 via-color1/50 to-color3/50 w-full max-w-lg h-96 p-4 rounded-2xl">
         <form
             class="flex flex-col gap-10 justify-center items-center h-full text-lg font-semibold"
