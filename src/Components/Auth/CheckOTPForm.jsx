@@ -22,11 +22,18 @@ function CheckOTPForm({ phoneNumber, onBack, onResendOtp, otpResponse }) {
                 otp: code,
             })
             console.log(data.message)
-            if (data.user.isActive) {
-                //do something
-            } else {
-                navigate("/complete-profile")
+
+            if (!data.user.isActive) return navigate("/complete-profile");
+            //we use return to finish the function processing right here and break the function
+            if (data.user.status !== 2) {
+                navigate("/")
+                console.log("your profile is waiting for accept");
+                return;
             }
+
+            if (data.user.role === "OWNER") return navigate("/owner");
+            if (data.user.role === "FREELANCER") return navigate("/freelancer");
+
         } catch (error) {
             console.log(error?.response?.data?.message)
         }
