@@ -1,6 +1,8 @@
+import ProjectsTable from "./ProjectsTable"
+
 function Projects() {
     return <>
-        projects page
+        <ProjectsTable />
     </>
 }
 export default Projects
