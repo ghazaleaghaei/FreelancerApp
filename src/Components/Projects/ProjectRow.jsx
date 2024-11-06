@@ -43,7 +43,7 @@ function ProjectRow({ project, index }) {
                     )
             }
         </td>
-        <td class="flex gap-2">
+        <td class="flex flex-wrap gap-2 justify-center items-center">
             <>
                 <button
                     class="text-color2"
