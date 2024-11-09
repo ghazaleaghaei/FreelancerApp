@@ -4,6 +4,8 @@ import Table from "../Shared/Table"
 import TruncateText from "./TruncateText"
 import ConfirmDelete from "./ConfirmDelete"
 import useRemoveProject from "./useRemoveProject"
+import CreateProjectForm from "./CreateProjectForm"
+import ToggleProjectStatus from "./ToggleProjectStatus"
 
 function ProjectRow({ project, index }) {
 
@@ -30,59 +32,54 @@ function ProjectRow({ project, index }) {
         </td>
         <td class="text-nowrap">{project.freelancer?.name || "_"}</td>
         <td>
-            {
-                project.status === "OPEN" ? (
-                    <span class="bg-color2/50 text-white rounded-full px-2 py-1">
-                        open
-                    </span>
-                ) :
-                    (
-                        <span class="bg-color3/50 text-white rounded-full px-2 py-1">
-                            close
-                        </span>
-                    )
-            }
+            <ToggleProjectStatus project={project} />
         </td>
-        <td class="flex flex-wrap gap-2 justify-center items-center">
-            <>
-                <button
-                    class="text-color2"
-                    onClick={() => setIsEditOpen(true)}
-                >
-                    edit
-                </button>
-                <Modal
-                    open={isEditOpen}
-                    title={`edit ${project.title}`}
-                    onClose={() => { setIsEditOpen(false) }}
-                >
-                    this is modal .....
-                </Modal>
-            </>
-            <>
-                <button
-                    class="text-red-700"
-                    onClick={() => setIsDeleteOpen(true)}
-                >
-                    delete
-                </button>
-                <Modal
-                    open={isDeleteOpen}
-                    title={`delete ${project.title}`}
-                    onClose={() => { setIsDeleteOpen(false) }}
-                >
-                    <ConfirmDelete
-                        resourceName={project.title}
+        <td class="h-full">
+            <div class="flex h-full justify-center items-center gap-2">
+                <>
+                    <button
+                        class="text-color2"
+                        onClick={() => setIsEditOpen(true)}
+                    >
+                        edit
+                    </button>
+                    <Modal
+                        open={isEditOpen}
+                        title={`edit ${project.title}`}
+                        onClose={() => { setIsEditOpen(false) }}
+                    >
+                        <CreateProjectForm
+                            onClose={() => { setIsEditOpen(false) }}
+                            projectToEdit={project}
+                            disable={false}
+                        />
+                    </Modal>
+                </>
+                <>
+                    <button
+                        class="text-red-700"
+                        onClick={() => setIsDeleteOpen(true)}
+                    >
+                        delete
+                    </button>
+                    <Modal
+                        open={isDeleteOpen}
+                        title={`delete ${project.title}`}
                         onClose={() => { setIsDeleteOpen(false) }}
-                        onConfirm={() => {
-                            removeProject(project._id, {
-                                onSuccess: () => setIsDeleteOpen(false),
-                            })
-                        }}
-                        disable={false}
-                    />
-                </Modal>
-            </>
+                    >
+                        <ConfirmDelete
+                            resourceName={project.title}
+                            onClose={() => { setIsDeleteOpen(false) }}
+                            onConfirm={() => {
+                                removeProject(project._id, {
+                                    onSuccess: () => setIsDeleteOpen(false),
+                                })
+                            }}
+                            disable={false}
+                        />
+                    </Modal>
+                </>
+            </div>
         </td>
     </Table.Row>
 }

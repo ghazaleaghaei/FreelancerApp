@@ -27,7 +27,7 @@ function TableBody({ children }) {
 }
 
 function TableRow({ children }) {
-    return <tr class="*:p-4 text-center border border-color2/10">{children}</tr>
+    return <tr class="*:p-4 text-center border border-color2/10 h-fit">{children}</tr>
 }
 
 Table.Header = TableHeader
