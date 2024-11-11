@@ -20,6 +20,7 @@ function ProjectsTable() {
                 <th>freelancer</th>
                 <th>status</th>
                 <th>operation</th>
+                <th>requests</th>
             </Table.Header>
             <Table.Body>
                 {

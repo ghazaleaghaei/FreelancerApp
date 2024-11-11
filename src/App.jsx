@@ -7,7 +7,7 @@ import Home from "./Components/Pages/Home"
 import AppLayout from "./Components/Layout/AppLayout"
 import OwnerDashboard from "./Components/Pages/OwnerDashboard"
 import Projects from "./Components/Projects/Projects"
-import Project from "./Components/Pages/Project"
+import Project from "./Components/Project/Project"
 
 const queryClient = new QueryClient()
 
