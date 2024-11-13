@@ -7,6 +7,7 @@ import useRemoveProject from "./useRemoveProject"
 import CreateProjectForm from "./CreateProjectForm"
 import ToggleProjectStatus from "./ToggleProjectStatus"
 import { Link } from "react-router-dom"
+import Eye from "../../Svg/Eye"
 
 function ProjectRow({ project, index }) {
 
@@ -84,7 +85,7 @@ function ProjectRow({ project, index }) {
         </td>
         <td>
             <Link to={project._id}>
-                &#9997;
+                <Eye class="w-8 aspect-square fill-color2" />
             </Link>
         </td>
     </Table.Row>

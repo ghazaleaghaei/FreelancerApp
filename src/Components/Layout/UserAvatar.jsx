@@ -2,7 +2,7 @@ import useUser from "../Auth/useUser"
 
 function UserAvatar() {
     const { user, isLoading } = useUser()
-    return <div class="flex gap-2 items-center">
+    return <div class={`flex gap-2 items-center ${isLoading && "blur-sm opacity-50"}`}>
         <img
             src="/user.webp"
             alt="user-account"

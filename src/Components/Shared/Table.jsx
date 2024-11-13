@@ -21,7 +21,7 @@ function TableHeader({ children }) {
 }
 
 function TableBody({ children }) {
-    return <tbody class="bg-color1/10">
+    return <tbody class="bg-color1/10 dark:bg-purple-200 dark:text-slate-900">
         {children}
     </tbody>
 }

@@ -8,25 +8,28 @@ import AppLayout from "./Components/Layout/AppLayout"
 import OwnerDashboard from "./Components/Pages/OwnerDashboard"
 import Projects from "./Components/Projects/Projects"
 import Project from "./Components/Project/Project"
+import { DarkModeProvider } from "./Components/Context/DarkModeContext"
 
 const queryClient = new QueryClient()
 
 function App() {
     return (
-        <QueryClientProvider client={queryClient}>
-            <Routes>
-                <Route path="/auth" element={<Auth />} />
-                <Route path="/complete-profile" element={<CompleteProfile />} />
-                <Route path="/owner" element={<AppLayout />}>
-                    <Route index element={<Navigate to="dashboard" replace />} />
-                    <Route path="dashboard" element={<OwnerDashboard />} />
-                    <Route path="projects" element={<Projects />} />
-                    <Route path="projects/:id" element={<Project />} />
-                </Route>
-                <Route path="/" element={<Home />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </QueryClientProvider>
+        <DarkModeProvider>
+            <QueryClientProvider client={queryClient}>
+                <Routes>
+                    <Route path="/auth" element={<Auth />} />
+                    <Route path="/complete-profile" element={<CompleteProfile />} />
+                    <Route path="/owner" element={<AppLayout />}>
+                        <Route index element={<Navigate to="dashboard" replace />} />
+                        <Route path="dashboard" element={<OwnerDashboard />} />
+                        <Route path="projects" element={<Projects />} />
+                        <Route path="projects/:id" element={<Project />} />
+                    </Route>
+                    <Route path="/" element={<Home />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </QueryClientProvider>
+        </DarkModeProvider>
     )
 }
 
