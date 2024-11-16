@@ -2,7 +2,7 @@ import { useState } from "react"
 import CheckOTPForm from "./CheckOTPForm"
 import SendOTPForm from "./SendOTPForm"
 import { useMutation } from "@tanstack/react-query"
-import { getOtp } from "../../Services.jsx/AuthService"
+import { getOtp } from "../../Services/AuthService"
 
 function Auth() {
     const [phoneNumber, setPhoneNumber] = useState("")

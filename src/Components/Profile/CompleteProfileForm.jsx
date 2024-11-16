@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
 import { useState } from "react"
-import { completeProfile } from "../../Services.jsx/AuthService"
+import { completeProfile } from "../../Services/AuthService"
 import { useNavigate } from "react-router-dom"
 
 function CompleteProfileForm() {

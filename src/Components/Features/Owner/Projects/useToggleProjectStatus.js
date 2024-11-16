@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createProjectApi } from "../../Services.jsx/ProjectService";
+import { toggleProjectStatusApi } from "../../../../Services/ProjectService";
 
-export default function useCreateProject() {
+export default function useToggleProjectStatus() {
     const queryClient = useQueryClient();
 
-    const { mutate: createProject, isPending: isCreating } = useMutation({
-        mutationFn: createProjectApi,
+    const { mutate: toggleProjectStatus, isPending: isUpdating } = useMutation({
+        mutationFn: toggleProjectStatusApi,
         onSuccess: (data) => {
             console.log(data.message);
 
@@ -15,5 +15,5 @@ export default function useCreateProject() {
         },
         onError: (err) => console.log(err?.response?.data?.message)
     })
-    return { createProject, isCreating }
+    return { toggleProjectStatus, isUpdating }
 }

@@ -4,11 +4,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import CompleteProfile from "./Components/Profile/CompleteProfile"
 import NotFound from "./Components/Pages/NotFound"
 import Home from "./Components/Pages/Home"
-import AppLayout from "./Components/Layout/AppLayout"
 import OwnerDashboard from "./Components/Pages/OwnerDashboard"
-import Projects from "./Components/Projects/Projects"
-import Project from "./Components/Project/Project"
 import { DarkModeProvider } from "./Components/Context/DarkModeContext"
+import OwnerLayout from "./Components/Features/Owner/OwnerLayout"
+import Projects from "./Components/Features/Owner/Projects/Projects"
+import Project from "./Components/Features/Owner/Project/Project"
 
 const queryClient = new QueryClient()
 
@@ -19,7 +19,7 @@ function App() {
                 <Routes>
                     <Route path="/auth" element={<Auth />} />
                     <Route path="/complete-profile" element={<CompleteProfile />} />
-                    <Route path="/owner" element={<AppLayout />}>
+                    <Route path="/owner" element={<OwnerLayout />}>
                         <Route index element={<Navigate to="dashboard" replace />} />
                         <Route path="dashboard" element={<OwnerDashboard />} />
                         <Route path="projects" element={<Projects />} />

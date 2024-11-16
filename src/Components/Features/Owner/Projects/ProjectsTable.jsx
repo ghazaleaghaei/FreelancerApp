@@ -1,4 +1,4 @@
-import Table from "../Shared/Table"
+import Table from "../../../Shared/Table"
 import ProjectRow from "./ProjectRow"
 import useOwnerProjects from "./useOwnerProjects"
 

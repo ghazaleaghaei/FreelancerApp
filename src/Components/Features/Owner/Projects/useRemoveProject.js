@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { removeProjectApi } from "../../Services.jsx/ProjectService";
+import { removeProjectApi } from "../../../../Services/ProjectService";
 
 export default function useRemoveProject() {
     const queryClient = useQueryClient();

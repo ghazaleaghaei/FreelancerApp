@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Table from "../Shared/Table";
-import Modal from "../Shared/Modal"
+import Table from "../../../Shared/Table";
+import Modal from "../../../Shared/Modal"
 import ChangeProposalStatus from "./ChangeProposalStatus";
 
 function ProposalRow({ proposal, index }) {

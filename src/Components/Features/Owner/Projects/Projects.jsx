@@ -1,7 +1,7 @@
 import { useState } from "react"
 import ProjectsTable from "./ProjectsTable"
 import CreateProjectForm from "./CreateProjectForm"
-import Modal from "../Shared/Modal"
+import Modal from "../../../Shared/Modal"
 
 function Projects() {
     const [isAddOpen, setIsAddOpen] = useState(false)

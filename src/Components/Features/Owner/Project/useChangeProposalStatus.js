@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { changeProposalStatusApi } from "../../Services.jsx/ProposalService";
+import { changeProposalStatusApi } from "../../../../Services/ProposalService";
 import { useParams } from "react-router-dom";
 
 export default function useChangeProposalStatus() {

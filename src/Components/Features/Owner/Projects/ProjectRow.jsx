@@ -1,13 +1,13 @@
 import { useState } from "react"
-import Modal from "../Shared/Modal"
-import Table from "../Shared/Table"
+import Modal from "../../../Shared/Modal"
+import Table from "../../../Shared/Table"
 import TruncateText from "./TruncateText"
 import ConfirmDelete from "./ConfirmDelete"
 import useRemoveProject from "./useRemoveProject"
 import CreateProjectForm from "./CreateProjectForm"
 import ToggleProjectStatus from "./ToggleProjectStatus"
 import { Link } from "react-router-dom"
-import Eye from "../../Svg/Eye"
+import Eye from "../../../../Svg/Eye"
 
 function ProjectRow({ project, index }) {
 

@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
 import { useEffect, useState } from "react"
-import { checkOtp } from "../../Services.jsx/AuthService"
+import { checkOtp } from "../../Services/AuthService"
 import { useNavigate } from "react-router-dom"
 
 function CheckOTPForm({ phoneNumber, onBack, onResendOtp, otpResponse }) {

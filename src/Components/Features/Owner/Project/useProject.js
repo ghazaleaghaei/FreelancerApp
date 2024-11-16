@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getProjectApi } from "../../Services.jsx/ProjectService";
+import { getProjectApi } from "../../../../Services/ProjectService";
 import { useParams } from "react-router-dom";
 
 export default function useProject() {

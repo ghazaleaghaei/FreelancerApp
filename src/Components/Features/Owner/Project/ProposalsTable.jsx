@@ -1,4 +1,4 @@
-import Table from "../Shared/Table"
+import Table from "../../../Shared/Table"
 import ProposalRow from "./ProposalRow"
 
 function ProposalsTable({ proposals }) {
