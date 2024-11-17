@@ -2,7 +2,7 @@ import AppLayout from "../../Layout/AppLayout"
 import CustomNavLink from "../../Layout/CustomNavLink"
 import Sidebar from "../../Layout/Sidebar"
 
-function OwnerLayout() {
+function FreelancerLayout() {
     return (
         <AppLayout>
             <Sidebar>
@@ -12,8 +12,11 @@ function OwnerLayout() {
                 <CustomNavLink to="projects">
                     <span>projects</span>
                 </CustomNavLink>
+                <CustomNavLink to="proposals">
+                    <span>projects</span>
+                </CustomNavLink>
             </Sidebar>
         </AppLayout>
     )
 }
-export default OwnerLayout
+export default FreelancerLayout
