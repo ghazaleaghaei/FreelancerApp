@@ -1,4 +1,4 @@
-import DashboardHeader from "./DashboardHeader"
+import DashboardHeader from "../../Shared/DashboardHeader"
 import useProposals from "./Proposals/useProposals"
 import Stats from "./Stats"
 

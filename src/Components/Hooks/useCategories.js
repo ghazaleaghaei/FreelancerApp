@@ -11,5 +11,9 @@ export default function useCategories() {
         label: category.title,
         value: category._id
     }))
-    return { isLoading, categories }
+    const transformedCategories = items.map((item) => ({
+        label: item.title,
+        value: item.englishTitle,
+    }))
+    return { isLoading, categories, transformedCategories }
 }

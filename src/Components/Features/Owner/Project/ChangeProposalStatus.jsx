@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import FormSelect from "../Projects/FormSelect";
 import useChangeProposalStatus from "./useChangeProposalStatus";
+import { useParams } from "react-router-dom";
+import { useQueryClient } from "@tanstack/react-query";
 
 function ChangeProposalStatus({ proposalId, onClose }) {
+
     const { register, handleSubmit } = useForm()
     const status = [
         {
@@ -18,13 +21,18 @@ function ChangeProposalStatus({ proposalId, onClose }) {
             value: 2
         }
     ]
+    const queryClient = useQueryClient();
+    const { id: projectId } = useParams();
     const { isUpdating, changeProposalStatus } = useChangeProposalStatus()
 
     const onSubmit = (data) => {
-        changeProposalStatus({ id: proposalId, data },
+        changeProposalStatus({ proposalId, projectId, ...data },
             {
                 onSuccess: () => {
                     onClose();
+                    queryClient.invalidateQueries({
+                        queryKey: ["project", projectId],
+                    })
                 }
             }
         )

@@ -13,7 +13,7 @@ function FreelancerLayout() {
                     <span>projects</span>
                 </CustomNavLink>
                 <CustomNavLink to="proposals">
-                    <span>projects</span>
+                    <span>proposals</span>
                 </CustomNavLink>
             </Sidebar>
         </AppLayout>

@@ -98,13 +98,14 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
             <TextField
                 label="budget"
                 name="budget"
+                type="number"
                 register={register}
                 required
                 validationSchema={{
                     required: "required",
                     minLength: {
                         value: 5,
-                        message: "the length of the title must be greater than 10 characters"
+                        message: "the length of the title must be greater than 5 characters"
                     }
                 }}
                 errors={errors}

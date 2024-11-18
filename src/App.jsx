@@ -11,8 +11,8 @@ import Projects from "./Components/Features/Owner/Projects/Projects"
 import Project from "./Components/Features/Owner/Project/Project"
 import FreelancerLayout from "./Components/Features/Freelancer/FreelancerLayout"
 import FreelancerDashboard from "./Components/Features/Freelancer/FreelancerDashboard"
-import Proposals from "./Components/Features/Freelancer/Proposals"
-import SubmittedProjects from "./Components/Features/Freelancer/SubmittedProjects"
+import Proposals from "./Components/Features/Freelancer/Proposals/Proposals"
+import SubmittedProjects from "./Components/Features/Freelancer/Projects/SubmittedProjects"
 
 const queryClient = new QueryClient()
 

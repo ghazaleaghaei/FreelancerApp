@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Modal from "../../../Shared/Modal"
 import Table from "../../../Shared/Table"
-import TruncateText from "./TruncateText"
+import TruncateText from "../../../Shared/TruncateText"
 import ConfirmDelete from "./ConfirmDelete"
 import useRemoveProject from "./useRemoveProject"
 import CreateProjectForm from "./CreateProjectForm"
