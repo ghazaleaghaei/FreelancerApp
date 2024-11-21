@@ -23,7 +23,7 @@ const statusOptions = [
     },
     {
         label: "close",
-        value: "ClOSED"
+        value: "CLOSED"
     }
 ]
 function ProjectsHeader() {
