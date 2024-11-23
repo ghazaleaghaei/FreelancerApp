@@ -1,5 +1,5 @@
 import Dashboard from "../../../Svg/Dashboard";
-import Stat from "./Stat";
+import Stat from "../../Shared/Stat";
 import Collections from "../../../Svg/Collections"
 import Price from "../../../Svg/Price"
 

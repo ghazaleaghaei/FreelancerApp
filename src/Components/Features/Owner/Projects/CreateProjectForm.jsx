@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form"
 import TextField from "../../../Shared/TextField"
-import FormSelect from "./FormSelect"
 import { useState } from "react"
 import TagsInput from "./TagsInput"
 import DatePickerField from "./DatePickerField"
 import useCategories from "../../../Hooks/useCategories"
 import useCreateProject from "./useCreateProject"
 import useEditProject from "./useEditProject"
+import FormSelect from "../../../Shared/FormSelect"
 
 function CreateProjectForm({ onClose, projectToEdit = {} }) {
 

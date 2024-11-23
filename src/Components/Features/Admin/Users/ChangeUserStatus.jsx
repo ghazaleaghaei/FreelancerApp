@@ -1,10 +1,8 @@
 import { useForm } from "react-hook-form";
-import useChangeProposalStatus from "./useChangeProposalStatus";
-import { useParams } from "react-router-dom";
-import { useQueryClient } from "@tanstack/react-query";
-import FormSelect from "../../../Shared/FormSelect"
+import useChangeUserStatus from "./useChangeUserStatus";
+import FormSelect from "../../../Shared/FormSelect";
 
-function ChangeProposalStatus({ proposalId, onClose }) {
+function ChangeUserStatus({ userId, onClose }) {
 
     const { register, handleSubmit } = useForm()
     const status = [
@@ -21,18 +19,14 @@ function ChangeProposalStatus({ proposalId, onClose }) {
             value: 2
         }
     ]
-    const queryClient = useQueryClient();
-    const { id: projectId } = useParams();
-    const { isUpdating, changeProposalStatus } = useChangeProposalStatus()
+
+    const { isUpdating, changeUserStatus } = useChangeUserStatus()
 
     const onSubmit = (data) => {
-        changeProposalStatus({ proposalId, projectId, ...data },
+        changeUserStatus({ userId, data },
             {
                 onSuccess: () => {
                     onClose();
-                    queryClient.invalidateQueries({
-                        queryKey: ["project", projectId],
-                    })
                 }
             }
         )
@@ -54,4 +48,4 @@ function ChangeProposalStatus({ proposalId, onClose }) {
         </button>
     </form>
 }
-export default ChangeProposalStatus
+export default ChangeUserStatus

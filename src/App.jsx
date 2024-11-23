@@ -14,6 +14,9 @@ import FreelancerDashboard from "./Components/Features/Freelancer/FreelancerDash
 import Proposals from "./Components/Features/Freelancer/Proposals/Proposals"
 import SubmittedProjects from "./Components/Features/Freelancer/Projects/SubmittedProjects"
 import ProtectedRoute from "./Components/Shared/ProtectedRoute"
+import AdminLayout from "./Components/Features/Admin/AdminLayout"
+import AdminDashboard from "./Components/Features/Admin/AdminDashboard"
+import Users from "./Components/Features/Admin/Users/Users"
 
 const queryClient = new QueryClient()
 
@@ -43,6 +46,18 @@ function App() {
                     >
                         <Route index element={<Navigate to="dashboard" replace />} />
                         <Route path="dashboard" element={<FreelancerDashboard />} />
+                        <Route path="proposals" element={<Proposals />} />
+                        <Route path="projects" element={<SubmittedProjects />} />
+                    </Route>
+                    <Route path="/admin" element={
+                        <ProtectedRoute>
+                            <AdminLayout />
+                        </ProtectedRoute>
+                    }
+                    >
+                        <Route index element={<Navigate to="dashboard" replace />} />
+                        <Route path="dashboard" element={<AdminDashboard />} />
+                        <Route path="users" element={<Users />} />
                         <Route path="proposals" element={<Proposals />} />
                         <Route path="projects" element={<SubmittedProjects />} />
                     </Route>

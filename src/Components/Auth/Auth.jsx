@@ -1,15 +1,22 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CheckOTPForm from "./CheckOTPForm"
 import SendOTPForm from "./SendOTPForm"
 import { useMutation } from "@tanstack/react-query"
 import { getOtp } from "../../Services/AuthService"
+import useUser from "./useUser"
+import { useNavigate } from "react-router-dom"
 
 function Auth() {
+    const { user } = useUser()
+    const navigate = useNavigate()
     const [phoneNumber, setPhoneNumber] = useState("")
     const [step, setStep] = useState(1)
     const { isPending: isSendingOtp, error, data: otpResponse, mutateAsync } = useMutation({
         mutationFn: getOtp,
     })
+    useEffect(() => {
+        if (user) navigate(`/${user.role.toLowerCase()}`)
+    }, [user])
 
     const sendOtpHandler = async (e) => {
         e.preventDefault()

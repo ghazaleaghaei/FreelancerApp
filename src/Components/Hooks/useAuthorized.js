@@ -8,6 +8,9 @@ export default function useAuthorized() {
 
     if (user) isAuthenticated = true
 
+    let isVerified = false
+    if (user && Number(user.status) === 2) isVerified = true
+
     let isAuthorized = false;
 
     const role = pathname.split("/").at(1);
@@ -22,5 +25,5 @@ export default function useAuthorized() {
         if (user && user.role === roles[role]) isAuthorized = true
     }
 
-    return { isLoading, isAuthenticated, isAuthorized, user }
+    return { isLoading, isAuthenticated, isAuthorized, user, isVerified }
 }

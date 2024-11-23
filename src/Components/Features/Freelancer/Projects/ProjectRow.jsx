@@ -17,7 +17,6 @@ const projectStatus = {
 }
 function ProjectRow({ project, index }) {
     const [isOpen, setIsOpen] = useState(false)
-    console.log(project)
 
     return <Table.Row key={project._id}>
         <td>{index + 1}</td>
