@@ -14,5 +14,6 @@ Currently, two official plugins are available:
 - React Router
 - React Hook Form
 
-https://github.com/user-attachments/assets/b7f05a11-d018-44f7-adb0-d015751694dc
+https://github.com/user-attachments/assets/180a6c5f-fd5f-4109-a8e6-daaa6bbfc871
+
 
